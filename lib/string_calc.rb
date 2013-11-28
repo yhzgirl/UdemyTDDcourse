@@ -8,9 +8,12 @@ class StringCalculator
   private
 
   def result(numbers)
-    striped_string = numbers.scan(/\d/)
-    num_arry = striped_string.map { |n| n.to_i }
-    num_arry.inject{|sum,x| sum + x }
+    number_array = numbers_from_string(numbers)
+    number_array.inject{|sum,x| sum + x }
+  end
+
+  def numbers_from_string(numbers)
+    numbers.scan(/\d/).map { |n| n.to_i }
   end
 
   def default_result
