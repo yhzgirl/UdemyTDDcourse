@@ -13,7 +13,8 @@ class StringCalculator
   end
 
   def numbers_from_string(numbers)
-    numbers.scan(/\d/).map { |n| n.to_i }
+    new_array = numbers.gsub(/\W/, ',')
+    new_array.split(/\,/).map { |n| n.to_i }
   end
 
   def default_result
